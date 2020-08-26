@@ -6,7 +6,6 @@ package com.wonder.thread;
  */
 class Producer implements Runnable {
     P q = null;
-
     public Producer(P q) {
         this.q = q;
     }
@@ -24,19 +23,6 @@ class Producer implements Runnable {
     }
 }
 
-class P {
-    private String name = "李四";
-    private String sex = "女";
-
-    public synchronized void set(String name, String sex) {
-        this.name = name;
-        this.sex = sex;
-    }
-
-    public synchronized void get() {
-        System.out.println(this.name + " ---->" + this.sex);
-    }
-}
 
 class Consumer implements Runnable {
     P q = null;
@@ -51,6 +37,32 @@ class Consumer implements Runnable {
         }
     }
 }
+
+
+class P {
+    private String name = "李四";
+    private String sex = "女";
+    boolean flag = true;
+    int i=0;
+    public synchronized void set(String name, String sex) {
+        if(flag==false){
+            this.name = name;
+            this.sex = sex;
+            flag =true;
+        }
+
+    }
+
+    public synchronized void get() {
+
+        if (flag == true) {
+            System.out.println(this.name + " ---->" + this.sex+" --->i="+(++i));
+            flag = false;
+        }
+    }
+}
+
+
 
 public class ThreadCommunation {
     public static void main(String[] args) {
