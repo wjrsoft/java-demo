@@ -4,8 +4,35 @@ package com.wonder.thread;
  * 线程通信问题引出
  * 1、使用构造方法解决姓名和性别问题，但是还是没处理好存入和取出的问题
  */
+
+
+class P {
+    private String name = "李四";
+    private String sex = "女";
+    boolean flag = true;
+    int i = 0;
+
+    public synchronized void set(String name, String sex) {
+        if (flag == false) {
+            this.name = name;
+            this.sex = sex;
+            flag = true;
+        }
+
+    }
+
+    public synchronized void get() {
+
+        if (flag == true) {
+            System.out.println(this.name + " ---->" + this.sex + " --->i=" + (++i));
+            flag = false;
+        }
+    }
+}
+
 class Producer implements Runnable {
     P q = null;
+
     public Producer(P q) {
         this.q = q;
     }
@@ -38,29 +65,6 @@ class Consumer implements Runnable {
     }
 }
 
-
-class P {
-    private String name = "李四";
-    private String sex = "女";
-    boolean flag = true;
-    int i=0;
-    public synchronized void set(String name, String sex) {
-        if(flag==false){
-            this.name = name;
-            this.sex = sex;
-            flag =true;
-        }
-
-    }
-
-    public synchronized void get() {
-
-        if (flag == true) {
-            System.out.println(this.name + " ---->" + this.sex+" --->i="+(++i));
-            flag = false;
-        }
-    }
-}
 
 
 
