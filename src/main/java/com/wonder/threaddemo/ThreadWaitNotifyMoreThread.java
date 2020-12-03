@@ -3,6 +3,9 @@ package com.wonder.threaddemo;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * @author  jinrong.wang
+ */
 public class ThreadWaitNotifyMoreThread implements Runnable {
 
     //构造些数据

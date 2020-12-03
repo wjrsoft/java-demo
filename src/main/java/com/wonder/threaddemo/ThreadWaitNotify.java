@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * 主要是 wait 和 notify的使用方法
  * wait和notify使用一定在synchronized方法或者代码块，且监视对象(lock/object)必须相同的
+ * @author  jinrong.wang
  */
 public class ThreadWaitNotify implements Runnable {
     //byte[] lock 是对象锁，最小开销的写法
