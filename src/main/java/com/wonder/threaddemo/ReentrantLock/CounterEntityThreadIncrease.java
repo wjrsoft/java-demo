@@ -1,10 +1,14 @@
 package com.wonder.threaddemo.ReentrantLock;
 
-public class ThreadIncrease implements Runnable {
+/**
+ * 一个简单的线程，死循环的加数，模拟阻塞场景
+ * @author jinrong.wang
+ */
+public class CounterEntityThreadIncrease implements Runnable {
 
     private CounterEntity counterEntity;
 
-    public ThreadIncrease(CounterEntity counterEntity) {
+    public CounterEntityThreadIncrease(CounterEntity counterEntity) {
         this.counterEntity = counterEntity;
     }
 
