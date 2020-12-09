@@ -5,6 +5,7 @@ import java.util.concurrent.Executors;
 
 public class TestNewFixedThreadPool {
     public static void main(String[] args) {
+        //创建一个定长线程池，可控制线程最大并发数，超出的线程会在队列中等待
         ExecutorService fixedThreadPool = Executors.newFixedThreadPool(3);
         TestThreadRunable testThreadRunable = new TestThreadRunable();
         //直接加载10个线程，实际是一次最多只处理3个线程
