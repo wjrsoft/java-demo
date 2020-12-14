@@ -6,7 +6,6 @@ import java.util.concurrent.locks.ReentrantLock;
  * Thread.interrupt()和reentrantLock.lockInterruptibly() 可以打断其他线程占用的锁，可以不用一直阻塞
  * reentrantLock.lockInterruptibly();//如果没有线程占用锁，则获取锁。如果有线程占用锁则会阻塞
  * <p>
- * ;
  */
 public class Test_ReentrantLockThread implements Runnable {
     //可重入锁
