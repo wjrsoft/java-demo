@@ -10,11 +10,10 @@ public class ConcreteSubject extends Subject {
     @Override
 
     public void notifyObserver() {
-
         System.out.println("目标对象状态已变化......发送通知给观察者中");
 
         for (Object object : observers) {
-            ((Observer) object).update();
+//            ((Observer) object).update();
 
         }
 

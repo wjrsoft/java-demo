@@ -9,3 +9,4 @@ public class reflectTest {
         System.out.println(m.invoke(str));
     }
 }
+

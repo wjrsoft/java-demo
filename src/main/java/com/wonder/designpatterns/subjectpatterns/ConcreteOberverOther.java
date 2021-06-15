@@ -17,5 +17,4 @@ public class ConcreteOberverOther implements Observer {
         System.out.println(observerName + "我要更新一下我的状态了......");
 
     }
-
 }
